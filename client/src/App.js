@@ -11,7 +11,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   root: {
-    width : '100%',
+    width: '100%',
     marginTop: theme.spacing.unit * 3,
     overflowX: "auto"
   },
@@ -51,19 +51,24 @@ class App extends Component {
     return (
       <Paper className={classes.root}>
         <Table className={classes.table}>
-        <TableHead>
+          <TableHead>
             <TableRow>
               <TableCell>번호</TableCell>
               <TableCell>이미지</TableCell>
-              <TableCell>이름</TableCell>
               <TableCell>생년월일</TableCell>
               <TableCell>성별</TableCell>
               <TableCell>직업</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {customers.map(c => {
-              return (<Customer key={c.id} id={c.id} image={c.image} name={c.name} birthday={c.birthday} gender={c.gender} job={c.job} />);
+            {customers.map(c => { //map 함수를 사용하면 배열을 순서대로 적용함
+              return (<Customer key={c.id} 
+                                id={c.id} 
+                                image={c.image} 
+                                name={c.name} 
+                                birthday={c.birthday} 
+                                gender={c.gender} 
+                                job={c.job} />);
             })}
           </TableBody>
         </Table>
